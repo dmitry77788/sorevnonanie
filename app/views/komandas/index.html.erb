@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Komandas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @komandas.each do |komanda| %>
+      <tr>
+        <td><%= komanda.name %></td>
+        <td><%= link_to 'Show', komanda %></td>
+        <td><%= link_to 'Edit', edit_komanda_path(komanda) %></td>
+        <td><%= link_to 'Destroy', komanda, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Komanda', new_komanda_path %>
