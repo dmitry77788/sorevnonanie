@@ -16,8 +16,8 @@
     <% @competitions.each do |competition| %>
       <tr>
         <td><%= competition.date %></td>
-        <td><%= competition.komanda1_id %></td>
-        <td><%= competition.komanda2_id %></td>
+        <td><%= competition.komanda1.name %></td>
+        <td><%= competition.komanda2.name %></td>
         <td><%= link_to 'Show', competition %></td>
         <td><%= link_to 'Edit', edit_competition_path(competition) %></td>
         <td><%= link_to 'Destroy', competition, method: :delete, data: { confirm: 'Are you sure?' } %></td>

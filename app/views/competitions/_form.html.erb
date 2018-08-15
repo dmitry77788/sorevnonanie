@@ -17,16 +17,24 @@
   </div>
 
   <div class="field">
-    <%= form.label :komanda1_id %>
-    <%= form.number_field :komanda1_id, id: :competition_komanda1_id %>
+    <%= form.select(:komanda1_id) do %>
+    <% @komandas.each do |komanda| -%>
+    <%= content_tag(:option, komanda.name, value: komanda.id) %>
+    <% end %>
+    <% end %>
   </div>
-
+ 
   <div class="field">
-    <%= form.label :komanda2_id %>
-    <%= form.number_field :komanda2_id, id: :competition_komanda2_id %>
+    <%= form.select(:komanda2_id) do %>
+    <% @komandas.each do |komanda| -%>
+    <%= content_tag(:option, komanda.name, value: komanda.id) %>
+    <% end %>
+    <% end %>
   </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+  
+
 <% end %>

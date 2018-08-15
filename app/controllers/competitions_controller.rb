@@ -15,6 +15,7 @@ class CompetitionsController < ApplicationController
   # GET /competitions/new
   def new
     @competition = Competition.new
+    @komandas = Komanda.all
   end
 
   # GET /competitions/1/edit
@@ -25,7 +26,7 @@ class CompetitionsController < ApplicationController
   # POST /competitions.json
   def create
     @competition = Competition.new(competition_params)
-
+    @komandas = Komanda.all
     respond_to do |format|
       if @competition.save
         format.html { redirect_to @competition, notice: 'Competition was successfully created.' }
